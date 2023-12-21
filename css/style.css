@@ -9,10 +9,8 @@ html {
 }
 
 .body {
-  background-color: #ddd;
-  max-width: 2000px;
+  background-color: #eee;
   font-family: "Montserrat", sans-serif;
-  word-break: break-word;
 }
 
 button {
