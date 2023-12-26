@@ -1,52 +1,106 @@
-.tasks {
+.task__list {
   list-style: none;
-  margin: 0;
-  padding: 20px;
 }
 
-.tasks__item {
+.task__ToDoList {
   display: grid;
   grid-template-columns: auto 1fr auto;
-  grid-gap: 10px;
-  align-items: center;
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
+  margin: 30px 0px;
+  height: 40px;
+  border-bottom: 1px solid rgb(185, 185, 185);
 }
 
-.tasks__button {
+.task__list {
+  padding-left: 0px;
+}
+
+.task__list--hidden {
+  display: none;
+}
+
+.task__newButtons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 992px) {
+  .task__hideOrShowAllDone {
+      display: flex;
+      flex-basis: 100%;
+      justify-content: center;
+      margin: 5px;
+  };
+}
+
+.task__hideOrShowAllDone {
+  background: transparent;
   border: none;
-  color: white;
+  color: teal;
+  transition: 1s;
+}
+
+.task__hideOrShowAllDone:hover {
+  color: rgb(0, 179, 179)
+}
+
+@media (max-width: 992px) {
+  .task__markAllDone {
+      display: flex;
+      flex-basis: 100%;
+      justify-content: center;
+      margin: 5px;
+  };
+}
+
+.task__markAllDone {
+  background: transparent;
+  border: none;
+  color: teal;
+  transition: 1s;
+}
+
+.task__markAllDone:hover {
+  color: rgb(0, 179, 179)
+}
+
+.task__markAllDone:disabled {
+  color: rgb(202, 202, 202);
+}
+
+.task__content {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.task__content--done {
+  text-decoration: line-through
+}
+
+.task__js--done {
+  background-color: rgb(1, 184, 1);
+  border: none;
   width: 30px;
   height: 30px;
-  padding: 0px;
+  color: white;
+  transition: 1s;
 }
 
-.tasks__button--toggleDone {
-  background-color: green;
-  font-size: 16px;
+.task__js--done:hover {
+  background-color: rgb(1, 228, 1);
 }
 
-.tasks__button--toggleDone:hover {
-  background-color: hsl(120, 100%, 30%);
+.task__js--remove {
+  background-color: rgb(222, 0, 0);
+  border: none;
+  width: 30px;
+  height: 30px;
+  color: white;
+  transition: 1s;
 }
 
-.tasks__button--toggleDone:active {
-  background-color: hsl(120, 100%, 35%);
-}
-
-.tasks__button--remove {
-  background-color: red;
-  font-size: 16px;
-}
-
-.tasks__button--remove:hover {
-  background-color: hsl(0, 100%, 55%);
-}
-
-.tasks__button--remove:active {
-  background-color: hsl(0, 100%, 60%);
-}
-
-.tasks__content--done {
-  text-decoration: line-through;
+.task__js--remove:hover {
+  background-color: rgb(255, 22, 22)
 }
