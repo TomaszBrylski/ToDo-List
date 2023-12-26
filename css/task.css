@@ -25,11 +25,11 @@
 
 @media (max-width: 992px) {
   .task__hideOrShowAllDone {
-      display: flex;
-      flex-basis: 100%;
-      justify-content: center;
-      margin: 5px;
-  };
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 5px;
+  }
 }
 
 .task__hideOrShowAllDone {
@@ -40,16 +40,16 @@
 }
 
 .task__hideOrShowAllDone:hover {
-  color: rgb(0, 179, 179)
+  color: rgb(0, 179, 179);
 }
 
 @media (max-width: 992px) {
   .task__markAllDone {
-      display: flex;
-      flex-basis: 100%;
-      justify-content: center;
-      margin: 5px;
-  };
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+    margin: 5px;
+  }
 }
 
 .task__markAllDone {
@@ -60,7 +60,7 @@
 }
 
 .task__markAllDone:hover {
-  color: rgb(0, 179, 179)
+  color: rgb(0, 179, 179);
 }
 
 .task__markAllDone:disabled {
@@ -76,7 +76,7 @@
 }
 
 .task__content--done {
-  text-decoration: line-through
+  text-decoration: line-through;
 }
 
 .task__js--done {
@@ -102,5 +102,5 @@
 }
 
 .task__js--remove:hover {
-  background-color: rgb(255, 22, 22)
+  background-color: rgb(255, 22, 22);
 }
