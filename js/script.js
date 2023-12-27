@@ -3,18 +3,13 @@
   let hideDoneTasks = false;
 
   const addNewTask = (newTaskContent) => {
-    tasks = [
-      ...tasks, 
-      { content: newTaskContent }];
-    
-      render();
+    tasks = [...tasks, { content: newTaskContent }];
+
+    render();
   };
 
   const removeTask = (taskIndex) => {
-    tasks = [
-        ...tasks.slice(0, taskIndex),
-        ...tasks.slice(taskIndex + 1),
-    ]; 
+    tasks = [...tasks.slice(0, taskIndex), ...tasks.slice(taskIndex + 1)];
 
     render();
   };
@@ -28,7 +23,7 @@
       },
       ...tasks.slice(taskIndex + 1),
     ];
-    
+
     render();
   };
 
@@ -49,16 +44,16 @@
     const removeButtons = document.querySelectorAll(".js-remove");
 
     removeButtons.forEach((removeButton, index) => {
-        removeButton.addEventListener("click", () => {
-          removeTask(index);
+      removeButton.addEventListener("click", () => {
+        removeTask(index);
       });
     });
 
     const toggleDoneButtons = document.querySelectorAll(".js-done");
 
     toggleDoneButtons.forEach((toggleDoneButton, index) => {
-        toggleDoneButton.addEventListener("click", () => {
-          toggleTaskDone(index);
+      toggleDoneButton.addEventListener("click", () => {
+        toggleTaskDone(index);
       });
     });
   };
@@ -69,15 +64,15 @@
     for (const task of tasks) {
       htmlString += `
         <li class="task__list ${task.done && hideDoneTasks ? " task__list--hidden" : ""}">
-         <span class="task__ToDoList">
-          <button class="js-done task__js--done">
-          ${task.done ? "✔" : ""}
-          </button>
-          <span class="task__content ${task.done ? "task__content--done" : ""}">
-          ${task.content}
+          <span class="task__ToDoList">
+            <button class="js-done task__js--done">
+              ${task.done ? "✔" : ""}
+            </button>
+            <span class="task__content ${task.done ? "task__content--done" : ""}">
+              ${task.content}
+            </span>
+            <button class="js-remove task__js--remove">🗑</button>
           </span>
-          <button class="js-remove task__js--remove">🗑</button>
-         </span>
         </li>
       `;
     }
@@ -105,10 +100,10 @@
     if (tasks.length > 0) {
       buttonsElement.innerHTML = `
         <button class="task__hideOrShowAllDone js-toggleDoneTasks">
-        ${hideDoneTasks ? "Show" : "Hide"} tasks done
+          ${hideDoneTasks ? "Show" : "Hide"} tasks done
         </button>
         <button class="task__markAllDone js-markAllDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
-        Mark all tasks as done
+          Mark all tasks as done
         </button>`;
     } else {
       buttonsElement.innerHTML = ``;
@@ -142,7 +137,6 @@
     const form = document.querySelector(".js-form");
 
     form.addEventListener("submit", onFormSubmit);
-    
   };
 
   init();
