@@ -3,13 +3,19 @@
   let hideDoneTasks = false;
 
   const addNewTask = (newTaskContent) => {
-    tasks = [...tasks, { content: newTaskContent }];
+    tasks = [
+      ...tasks, 
+      { content: newTaskContent }
+    ];
 
     render();
   };
 
   const removeTask = (taskIndex) => {
-    tasks = [...tasks.slice(0, taskIndex), ...tasks.slice(taskIndex + 1)];
+    tasks = [
+      ...tasks.slice(0, taskIndex), 
+      ...tasks.slice(taskIndex + 1)
+    ];
 
     render();
   };
@@ -102,7 +108,8 @@
         <button class="task__hideOrShowAllDone js-toggleDoneTasks">
           ${hideDoneTasks ? "Show" : "Hide"} tasks done
         </button>
-        <button class="task__markAllDone js-markAllDone" ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+        <button class="task__markAllDone js-markAllDone" 
+          ${tasks.every(({ done }) => done) ? "disabled" : ""}>
           Mark all tasks as done
         </button>`;
     } else {
